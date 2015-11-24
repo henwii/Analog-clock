@@ -21,7 +21,6 @@ public class GameRenderer {
         cam.setToOrtho(true,1080,1920);
         shapeRenderer = new ShapeRenderer();
         shapeRenderer.setProjectionMatrix(cam.combined);
-        Gdx.input.setInputProcessor(clock);
     }
 
     public void render() {
