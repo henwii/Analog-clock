@@ -9,7 +9,7 @@ public class GameScreen implements Screen {
 
     private GameRenderer renderer;
 
-    public GameScreen(){
+    public GameScreen() {
         renderer = new GameRenderer();
     }
 
