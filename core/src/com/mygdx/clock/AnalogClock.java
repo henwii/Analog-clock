@@ -24,7 +24,7 @@ public class AnalogClock{
 
     AnalogClock(){
         seconds = 0;
-        time = "Time: 0";
+        time = "Time: 0.0.00";
         Bitmap = new BitmapFont();
         batch = new SpriteBatch();
     }
@@ -52,8 +52,8 @@ public class AnalogClock{
         shapeRenderer.circle((int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)), 10);
         shapeRenderer.end();
         batch.begin();
-        Bitmap.setColor(Color.BLUE);
-        Bitmap.draw(batch, time, 520, 1700);
+        Bitmap.setColor(Color.BLACK);
+        Bitmap.draw(batch, time, 500, 1700);
         batch.end();
     }
 
