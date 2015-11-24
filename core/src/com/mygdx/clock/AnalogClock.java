@@ -13,9 +13,9 @@ public class AnalogClock{
     int x = 540; // Mitt på skärmen
     int y = 960;
     int radius = 470;
-    double SecondAngle = 4.7;
-    double MinuteAngle = 4.7; // Startvinkel, blir kl 12 om man har 4.7 av nån anledning
-    double HourAngle = 4.7;
+    double SecondAngle = 4.71238898038;
+    double MinuteAngle = 4.71238898038; // 270 grader = 4.712... radianer
+    double HourAngle = 4.71238898038;
 
     public void render(ShapeRenderer shapeRenderer) {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
@@ -37,9 +37,9 @@ public class AnalogClock{
     }
 
     public void update() {
-        SecondAngle += 0.16; //Ta reda på hur snabbt den ska snurra
-        MinuteAngle += 0.002777; //
-        HourAngle += 0.0004629;
+        SecondAngle += (Math.PI*2)/60; //Ta reda på hur snabbt den ska snurra
+        MinuteAngle += (Math.PI*2)/3600; //
+        HourAngle += (Math.PI*2)/216000;
 
     }
 }
