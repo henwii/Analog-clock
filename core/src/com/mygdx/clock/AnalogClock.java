@@ -58,9 +58,9 @@ public class AnalogClock{
     }
 
     public void update() {
-        SecondAngle += (Math.PI*2)/60; //Radianer
-        MinuteAngle += (Math.PI*2)/3600;
-        HourAngle += (Math.PI*2)/216000;
+        SecondAngle += (Math.PI*2)/60; //1 varv/s
+        MinuteAngle += (Math.PI*2)/3600; //1 varv/min
+        HourAngle += (Math.PI*2)/216000; //1 varv/h
         //if(){
           //  seconds++;
             //time = "Time" + seconds;
