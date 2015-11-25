@@ -41,17 +41,18 @@ public class AnalogClock {
         shapeRenderer.setColor(Color.BLACK);
         shapeRenderer.line(x, y - 450, x, y);
 
-        shapeRenderer.line(x, y, x + (radius - 20) * MathUtils.cos(SecondAngle), y + (radius - 20) * MathUtils.sin(SecondAngle));
-        shapeRenderer.circle((x + (radius - 20) * MathUtils.cos(SecondAngle)), (y + (radius - 20) * MathUtils.sin(SecondAngle)), 10);
-        shapeRenderer.line(x, y, (x + (radius - 60) * MathUtils.cos(MinuteAngle)), (y + (radius - 60) * MathUtils.sin(MinuteAngle)));
-        shapeRenderer.circle((x + (radius - 60) * MathUtils.cos(MinuteAngle)), (y + (radius - 60) * MathUtils.sin(MinuteAngle)), 10);
-        shapeRenderer.line(x, y, (x + (radius - 100) * MathUtils.cos(HourAngle)), (y + (radius - 100) * MathUtils.sin(HourAngle)));
+        shapeRenderer.line(x, y, (int) (x + (radius - 20) * Math.cos(SecondAngle)), (int) (y + (radius - 20) * Math.sin(SecondAngle)));
+        shapeRenderer.circle((int) (x + (radius - 20) * Math.cos(SecondAngle)), (int) (y + (radius - 20) * Math.sin(SecondAngle)), 10);
+        shapeRenderer.line(x, y, (int) (x + (radius - 60) * Math.cos(MinuteAngle)), (int) (y + (radius - 60) * Math.sin(MinuteAngle)));
+        shapeRenderer.circle((int) (x + (radius - 60) * Math.cos(MinuteAngle)), (int) (y + (radius - 60) * Math.sin(MinuteAngle)), 10);
+        shapeRenderer.line(x, y, (int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)));
+        shapeRenderer.circle((int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)), 10);
         shapeRenderer.rect(538, 475, 4, 60);
         shapeRenderer.rect(538, 1390, 4, 60);
         shapeRenderer.rect(50, 960, 60, 4);
         shapeRenderer.rect(960, 960, 60, 4);
-        shapeRenderer.circle((x + (radius - 100) * MathUtils.cos(HourAngle)), (y + (radius - 100) * MathUtils.sin(HourAngle)), 10);
         shapeRenderer.end();
+
         batch.begin();
         Bitmap.setColor(Color.BLACK);
         Bitmap.draw(batch, time, 500, 1700);
