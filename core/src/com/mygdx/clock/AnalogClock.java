@@ -45,12 +45,13 @@ public class AnalogClock{
         shapeRenderer.line(x, y, (int) (x + (radius - 60) * Math.cos(MinuteAngle)), (int) (y + (radius - 60) * Math.sin(MinuteAngle)));
         shapeRenderer.circle((int) (x + (radius - 60) * Math.cos(MinuteAngle)), (int) (y + (radius - 60) * Math.sin(MinuteAngle)), 10);
         shapeRenderer.line(x, y, (int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)));
+        shapeRenderer.circle((int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)), 10);
         shapeRenderer.rect(538, 475, 4, 60);
         shapeRenderer.rect(538, 1390, 4, 60);
         shapeRenderer.rect(50, 960, 60,4);
         shapeRenderer.rect(960, 960, 60, 4);
-        shapeRenderer.circle((int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)), 10);
         shapeRenderer.end();
+
         batch.begin();
         Bitmap.setColor(Color.BLACK);
         Bitmap.draw(batch, time, 500, 1700);
