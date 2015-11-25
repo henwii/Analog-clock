@@ -4,25 +4,26 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.MathUtils;
 
 /**
  * Created by Besten on 2015-11-24.
  */
-public class AnalogClock{
+public class AnalogClock {
 
-    int x = 540; // Mitt på skärmen
-    int y = 960;
-    int radius = 470;
-    double SecondAngle = 4.71238898038;
-    double MinuteAngle = 4.71238898038; // 270 grader = 4.712... radianer
-    double HourAngle = 4.71238898038;
+    float x = 540; // Mitt på skärmen
+    float y = 960;
+    float radius = 470;
+    float SecondAngle = MathUtils.degreesToRadians * 270;
+    float MinuteAngle = MathUtils.degreesToRadians * 270;
+    float HourAngle = MathUtils.degreesToRadians * 270;
 
     int seconds;
     String time;
     BitmapFont Bitmap;
     SpriteBatch batch;
 
-    AnalogClock(){
+    AnalogClock() {
         seconds = 0;
         time = "Time: 0.0.00";
         Bitmap = new BitmapFont();
@@ -48,7 +49,7 @@ public class AnalogClock{
         shapeRenderer.circle((int) (x + (radius - 100) * Math.cos(HourAngle)), (int) (y + (radius - 100) * Math.sin(HourAngle)), 10);
         shapeRenderer.rect(538, 475, 4, 60);
         shapeRenderer.rect(538, 1390, 4, 60);
-        shapeRenderer.rect(50, 960, 60,4);
+        shapeRenderer.rect(50, 960, 60, 4);
         shapeRenderer.rect(960, 960, 60, 4);
         shapeRenderer.end();
 
@@ -59,12 +60,9 @@ public class AnalogClock{
     }
 
     public void update() {
-        SecondAngle += (Math.PI*2)/60; //1 varv/s
-        MinuteAngle += (Math.PI*2)/3600; //1 varv/min
-        HourAngle += (Math.PI*2)/216000; //1 varv/h
-        //if(){
-          //  seconds++;
-            //time = "Time" + seconds;
-        //}
+        SecondAngle += (MathUtils.PI * 2) / 60; //Ta reda på hur snabbt den ska snurra
+        MinuteAngle += (MathUtils.PI * 2) / 3600; //
+        HourAngle += (MathUtils.PI * 2) / 216000;
+
     }
 }
